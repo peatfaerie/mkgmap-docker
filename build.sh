@@ -8,7 +8,7 @@ if [ "$1" == "release" ]; then
     release_build=true
 fi
 
-docker build --tag "peatfaerie/${name}:${tag}"  --no-cache=${release_build} .
+docker build --tag "peatfaerie/${name}:${tag}"  --no-cache=${release_build} --platform amd64 .
 
 if [ $release_build == true ]; then
 	docker tag "peatfaerie/${name}:${tag}" "peatfaerie/${name}:latest"

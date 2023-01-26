@@ -10,7 +10,8 @@ WORKDIR /opt
 RUN wget http://www.mkgmap.org.uk/download/mkgmap-${MKGMAP_VERSION}.zip \
     && unzip mkgmap-${MKGMAP_VERSION}.zip \
     && mv mkgmap-${MKGMAP_VERSION} mkgmap \
-    && rm mkgmap-${MKGMAP_VERSION}.zip
+    && rm mkgmap-${MKGMAP_VERSION}.zip \
+    && rm -rf mkgmap/{doc,examples}
 
 RUN apk add --no-cache --update qt5-qtbase libusb
 
